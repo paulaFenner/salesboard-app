@@ -48,7 +48,7 @@ body.dark-mode {
 }
 
 label {
-    width: 30px;
+    width: 75px;
     height: 25px;
     position: relative;
     display:flex;
