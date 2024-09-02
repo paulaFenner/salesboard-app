@@ -19,10 +19,8 @@ html, body {
     --darck: #44354A;
     --purple: #9E4770;
     --background: #2c1c2c;
-    /*#
-    ffC4EB
-    backdound live sales & more
-    */
+    --moon-default-color: #222222; 
+    --moon-checked-color: #FFFFFF;  
 }
 
 .dark-mode {
@@ -39,8 +37,8 @@ body {
 }
 
 body.dark-mode {
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--black);
+    color: var(--white);
 }
 
 #darkmode-toggle {
@@ -111,4 +109,13 @@ label:active:after {
 
 input:checked + label + .background {
     background: #242424;
+}
+
+.moon {
+    stroke: var(--moon-default-color);
+    transition: stroke 0.3s;
+}
+
+input:checked + label .moon {
+    stroke: var(--moon-checked-color);
 }
