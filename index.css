@@ -19,6 +19,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 :root {
@@ -31,6 +32,7 @@ body {
     --button-outline-color: black;
     --button-text-shadow: 1px 1px 2px #222222, -1px -1px 2px #222222;
     --sales-bg-color: #FFC4EB;
+    --dark-purple: #44354A;
 }
 
 .dark-mode {
@@ -53,6 +55,10 @@ main {
     align-items: center;
     flex-direction: column;
 }
+.live .main-heading {
+    font-size: 10rem;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -132,4 +138,24 @@ label, label::after {
 }
 label:active:after {
     width: 26px;
+}
+.sales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-purple);
+    border-radius: 30px;
+    padding: 20px;
+    width: 30rem;
+    height: 1rem;
+    font-weight: bold;
+    line-height: 15px;
+    margin-right: 20px;
+}
+
+.live {
+    font-weight: bold;
+    margin-top: 2rem;
+    font-size: 1rem;
+    text-align: center;
 }
