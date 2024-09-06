@@ -29,17 +29,12 @@ let currentUserIndex = 0;
 
 function loadUser(userIndex) {
     currentUserIndex = userIndex - 1;
-    
     const user = users[currentUserIndex]
-
     document.getElementById("user-img").src = user.img;
-
     document.getElementById("live-sales").textContent = user.liveSalesBoard;
     // document.getElementById("live-achievements").textContent = user.liveAchievements;
     document.getElementById("total-revenue").textContent = user.totalRevenue;
     document.getElementById("total-comission").textContent = user.totalComission;
-    console.log(user.totalComission)
-
 
 }
 
@@ -78,7 +73,6 @@ let liveSalesBoard = document.getElementById("live-sales")
 
 /*live achievements board */
 let liveAchievementsBoard = document.getElementById("live-achievements")
-console.log(liveAchievementsBoard)
 /* Total revenue board */
 let totalRevenueBoard = document.getElementById("total-revenue")
 
@@ -86,7 +80,6 @@ let totalComissionBoard = document.getElementById("total-comission")
 
 /* Reset Data */
 const resetData = document.querySelector(".reset-button")
-console.log(resetData)
 
 // variables
 let maxElements = 13;
@@ -99,20 +92,15 @@ let totalComission = 0;
 function addStar() {
     const user = users[currentUserIndex];
 
-    console.log(user)
-
     if (user.countElement < 12) {
         user.liveSalesBoard += productA.emoji;
         user.totalRevenue += productA.revenue;
         user.totalComission += productA.commision;
-
         user.countElement++;
-
         // Atualiza a interface (DOM) com os novos valores
         liveSalesBoard.textContent = user.liveSalesBoard;
         totalRevenueBoard.textContent = user.totalRevenue;
         totalComissionBoard.textContent = user.totalComission;
-        
     } else {
         alert ("Maximum of elements")
     }
@@ -120,7 +108,6 @@ function addStar() {
 
 function addFire() {
     const user = users[currentUserIndex];
-    console.log(user);
 
     if (user.countElement < 12) {
 
@@ -129,7 +116,6 @@ function addFire() {
         user.totalComission += productB.commision;
         user.countElement++
         //atualizar a DOM
-        
         liveSalesBoard.innerText = user.liveSalesBoard;
         totalRevenueBoard.innerText = user.totalRevenue;
         totalComissionBoard.textContent = user.totalComission;
@@ -141,21 +127,14 @@ function addFire() {
 
 function resetDataAll() {
     const user = users[currentUserIndex];
-
-
-    console.log(user.liveSalesBoard.textContent)
-  
-    
     user.totalRevenue = 0;
     user.totalComission = 0;
-
-    //dom
-    user.liveSalesBoard.textContent = "";
-    user.liveAchievements.textContent = "";
-    user.totalRevenue.textContent = 0;
-    user.totalComission.textContent = 0;
-
-    countElement = 0;
+    user.liveSalesBoard = "";
+    user.liveAchievements = ""
+    user.countElement = 0;
+    liveSalesBoard.innerText = user.liveSalesBoard;
+    totalRevenueBoard.innerText = user.totalRevenue;
+    totalComissionBoard.textContent = user.totalComission;
 
     console.log("clicked")
 }
