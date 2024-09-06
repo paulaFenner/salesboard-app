@@ -47,8 +47,13 @@
           <header>
             <h1 class="live main-heading">Salesboard 🔔</h1>
           </header>
+          <div>
+            <button onclick="loadUser(1)" class="btn">Paula</button>
+            <button onclick="loadUser(2)" class="btn">Samuel</button>
+            <button onclick="loadUser(3)" class="btn">André</button>
+          </div>
           <figure>
-            <img id="main-image" alt="Andre's Face" src="./images/andre.jpeg">
+            <img id="user-img" class="user-img" alt="User" src="./images/picture.jpg">
           </figure>
           <div class="buttons">
            <button type="button" role="button" class="btn btn-star" id="star" aria-label="Star sales">⭐</button> 
@@ -63,12 +68,12 @@
           <div class="Revenue">
             <div class="total">
               <p>Total Revenue</p>
-              <span class="total-revenue" id="name"></span>
+              <span  id="total-revenue"></span>
             </div>
             <div class="total">
               <p>
                 <p class="name">Total Commission</p>
-                <span class="total-comission" id="name"></span>
+                <span class="total-comission" id="total-comission"></span>
               </p>
 
             </div>

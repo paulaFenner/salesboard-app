@@ -1,3 +1,48 @@
+const users = [
+    {
+        img: "./images/picture.jpg" ,
+        liveSalesBoard: "",
+        liveAchievements: "",
+        totalRevenue: 0,
+        totalComission: 0,
+        countElement: 0
+    },
+    {
+        img: "./images/picture.jpg",
+        liveSalesBoard: "",
+        liveAchievements: "",
+        totalRevenue: 0,
+        totalComission: 0,
+        countElement: 0
+    },
+    {
+        img: "./images/andre.jpeg",
+        liveSalesBoard: "",
+        liveAchievements: "",
+        totalRevenue: 0,
+        totalComission: 0,
+        countElement: 0
+    }
+]
+
+let currentUserIndex = 0;
+
+function loadUser(userIndex) {
+    currentUserIndex = userIndex - 1;
+    
+    const user = users[currentUserIndex]
+
+    document.getElementById("user-img").src = user.img;
+
+    document.getElementById("live-sales").textContent = user.liveSalesBoard;
+    // document.getElementById("live-achievements").textContent = user.liveAchievements;
+    document.getElementById("total-revenue").textContent = user.totalRevenue;
+    document.getElementById("total-comission").textContent = user.totalComission;
+    console.log(user.totalComission)
+
+
+}
+
 // Product A info
 let productA = {
     emoji: "⭐",
@@ -35,9 +80,9 @@ let liveSalesBoard = document.getElementById("live-sales")
 let liveAchievementsBoard = document.getElementById("live-achievements")
 console.log(liveAchievementsBoard)
 /* Total revenue board */
-let totalRevenueBoard = document.querySelector(".total-revenue")
-console.log(totalRevenueBoard)
-let totalComissionBoard = document.querySelector(".total-comission")
+let totalRevenueBoard = document.getElementById("total-revenue")
+
+let totalComissionBoard = document.getElementById("total-comission")
 
 /* Reset Data */
 const resetData = document.querySelector(".reset-button")
@@ -52,34 +97,67 @@ let totalComission = 0;
 
 // functions 
 function addStar() {
-    if (countElement < 12) {
-        liveSalesBoard.innerText += productA.emoji;
-        totalRevenueBoard.innerText = Number(totalRevenueBoard.innerText) + productA.revenue;
-        totalComissionBoard.innerText = Number(totalComissionBoard.innerText) + productA.commision;
-        countElement++ 
+    const user = users[currentUserIndex];
+
+    console.log(user)
+
+    if (user.countElement < 12) {
+        user.liveSalesBoard += productA.emoji;
+        user.totalRevenue += productA.revenue;
+        user.totalComission += productA.commision;
+
+        user.countElement++;
+
+        // Atualiza a interface (DOM) com os novos valores
+        liveSalesBoard.textContent = user.liveSalesBoard;
+        totalRevenueBoard.textContent = user.totalRevenue;
+        totalComissionBoard.textContent = user.totalComission;
+        
     } else {
         alert ("Maximum of elements")
     }
 }
 
 function addFire() {
-    if (countElement < 12) {
-        liveSalesBoard.innerText += productB.emoji;
-        totalRevenueBoard.innerText = Number(totalRevenueBoard.innerText) + productB.revenue;
-        totalComissionBoard.innerText = Number(totalComissionBoard.innerText) + productB.commision;
-        countElement++; 
+    const user = users[currentUserIndex];
+    console.log(user);
+
+    if (user.countElement < 12) {
+
+        user.liveSalesBoard += productB.emoji;
+        user.totalRevenue += productB.revenue;
+        user.totalComission += productB.commision;
+        user.countElement++
+        //atualizar a DOM
+        
+        liveSalesBoard.innerText = user.liveSalesBoard;
+        totalRevenueBoard.innerText = user.totalRevenue;
+        totalComissionBoard.textContent = user.totalComission;
+
     } else {
         alert ("maximum of elements")
     }
 }
 
 function resetDataAll() {
-    liveSalesBoard.innerText = "";
-    liveAchievementsBoard.innerText = "";
-    totalRevenueBoard.innerText = 0;
-    totalComission.innerText = 0;
-    totalComissionBoard.innerText = 0;
+    const user = users[currentUserIndex];
+
+
+    console.log(user.liveSalesBoard.textContent)
+  
+    
+    user.totalRevenue = 0;
+    user.totalComission = 0;
+
+    //dom
+    user.liveSalesBoard.textContent = "";
+    user.liveAchievements.textContent = "";
+    user.totalRevenue.textContent = 0;
+    user.totalComission.textContent = 0;
+
     countElement = 0;
+
+    console.log("clicked")
 }
 
 // add fire and star
