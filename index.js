@@ -12,6 +12,12 @@ let productB = {
     commision: 75
 }
 
+let achievements = {
+    bell: "🔔",
+    money: "💰",
+    trophy: "🏆"
+}
+
 const toggle = document.getElementById('darkmode-toggle');
 
 toggle.addEventListener('change', function() {
@@ -21,7 +27,6 @@ toggle.addEventListener('change', function() {
 /* Variables of fire & star */
 const star = document.getElementById("star")
 const fire = document.getElementById("fire")
-console.log(star)
 
 /* live sales */
 let liveSalesBoard = document.getElementById("live-sales")
@@ -32,23 +37,48 @@ console.log(liveAchievementsBoard)
 /* Total revenue board */
 let totalRevenueBoard = document.querySelector(".total-revenue")
 console.log(totalRevenueBoard)
+let totalComissionBoard = document.querySelector(".total-comission")
+
 /* Reset Data */
 const resetData = document.querySelector(".reset-button")
 console.log(resetData)
 
-
+// variables
+let maxElements = 13;
+let countElement = 0;
+let liveAchievements = 0;
+let totalRevenue = 0;
+let totalComission = 0;
 
 // functions 
 function addStar() {
-    liveSalesBoard.innerText += productA.emoji;
+    if (countElement < 12) {
+        liveSalesBoard.innerText += productA.emoji;
+        totalRevenueBoard.innerText = Number(totalRevenueBoard.innerText) + productA.revenue;
+        totalComissionBoard.innerText = Number(totalComissionBoard.innerText) + productA.commision;
+        countElement++ 
+    } else {
+        alert ("Maximum of elements")
+    }
 }
 
 function addFire() {
-    liveSalesBoard.innerText += productB.emoji;
+    if (countElement < 12) {
+        liveSalesBoard.innerText += productB.emoji;
+        totalRevenueBoard.innerText = Number(totalRevenueBoard.innerText) + productB.revenue;
+        totalComissionBoard.innerText = Number(totalComissionBoard.innerText) + productB.commision;
+        countElement++; 
+    } else {
+        alert ("maximum of elements")
+    }
 }
 
 function resetDataAll() {
-    liveSalesBoard.innerText = ""
+    liveSalesBoard.innerText = "";
+    liveAchievementsBoard.innerText = "";
+    totalRevenueBoard.innerText = 0;
+    totalComission.innerText = 0;
+    totalComissionBoard.innerText = 0;
 }
 
 // add fire and star

@@ -158,7 +158,7 @@ label:active:after {
     font-weight: bold;
     line-height: 15px;
     margin-right: 20px;
-    border: 4px solid var(--button-outline-color) ;
+    outline: 4px solid var(--button-outline-color) ;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
 
@@ -183,7 +183,7 @@ label:active:after {
 }
 
  #name {
-    background-color: var(--dark-purple);
+    background-color: var(--sales-color);
     border-radius: 30px;
     padding: 20px;
     width: 10rem;
@@ -192,4 +192,5 @@ label:active:after {
     justify-content: center;
     align-items: center;
     margin: 0;
+    outline: 4px solid var(--button-outline-color) ;
 }
