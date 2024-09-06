@@ -79,6 +79,7 @@ function resetDataAll() {
     totalRevenueBoard.innerText = 0;
     totalComission.innerText = 0;
     totalComissionBoard.innerText = 0;
+    countElement = 0;
 }
 
 // add fire and star
