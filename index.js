@@ -136,7 +136,6 @@ function resetDataAll() {
     totalRevenueBoard.innerText = user.totalRevenue;
     totalComissionBoard.textContent = user.totalComission;
 
-    console.log("clicked")
 }
 
 // add fire and star
