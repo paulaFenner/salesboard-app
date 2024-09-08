@@ -28,7 +28,7 @@ const users = [
   },
 ];
 
-/* variables can be removed since we're using them to each user
+/* variables can be removed since we're using them to each user ✅(andre)
 let maxElements = 13;
 let countElement = 0;
 let liveAchievements = [];
